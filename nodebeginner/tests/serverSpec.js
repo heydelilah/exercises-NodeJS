@@ -1,10 +1,19 @@
 var chai = require('chai')
 var should = chai.should();
-var app = require('../server');
+var sinon = require('sinon');
 
+var server = require('../server');
 
 describe('Server', function () {
+	beforeEach(function () {
+
+	});
 	it('should be defined', function () {
-		app.start.should.exist;
+		server.start.should.exist;
+	});
+	it('should create a server', function () {
+		var cb = sinon.spy();
+		server.start(cb);
+		// @todo...
 	});
 });
